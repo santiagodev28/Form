@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con validación</title>
+    <link rel="stylesheet" href="../_css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario Avanzado</h1>
+
+        <!-- Barra progreso -->
+        <div class="form-progress">
+            <div class="bar-progress" id="barProgress"></div>
+        </div>
+
+        <p style=" text-align: center; color:#666; margin-bottom: 30px">
+            Progreso: <span id="percentageProgress">0%</span> 
+        </p>
+
+        <form id="AdvancedForm" novalidate>
+
+            <div class="form-group">
+                <label for="names">Nombres *</label>
+                <input 
+                    type="text"
+                    id="names"
+                    name="names"
+                    required
+                    autofocus
+                    placeholder="Ingresa tus nombres"
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,40}"/>
+
+                <div class="message-error" id="errorNames"></div>
+                <div class="message-success" id="successNames"></div>
+            </div> 
+
+            <div class="form-group">
+                <label for="lastNames">Apellidos *</label>
+                <input 
+                    type="text"
+                    id="lastNames"
+                    name="lastNames"
+                    required
+                    placeholder="Ingresa tus apellidos"
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,40}"/>
+                <div class="message-error" id="errorLastNames"></div>
+                <div class="message-success" id="successLastNames"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electronico *</label>
+                <input 
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="usuario@dominio.com"
+                    pattern="^[\w- \.]+@([\w-]+\.)+[\w-]{5,4}$"/>
+                <div class="message-error" id="errorEmail"></div>
+                <div class="message-success" id="successEmail"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmEmail">Confirmar Correo Electronico *</label>
+                <input 
+                    type="email"
+                    id="confirmEmail"
+                    name="confirmEmail"
+                    required
+                    placeholder="Repite tu correo"
+                    onpaste="return false"/>
+                <div class="message-error" id="errorConfirmEmail"></div>
+                <div class="message-success" id="successConfirmEmail"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña *</label>
+                <input 
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    placeholder="Minimo 8 caracteres"
+                    minlength="8"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"/>
+                <div class="password-strength" id="strengthBar"></div>
+                <div class="message-error" id="errorPassword"></div>
+                <div class="message-success" id="successPassword"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Contraseña *</label>
+                <input 
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    required
+                    placeholder="Repite tu contraseña"
+                    onpaste="return false"/>
+                <div class="message-error" id="errorConfirmPassword"></div>
+                <div class="message-success" id="successConfirmPassword"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono *</label>
+                <input 
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="300-000-0000"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                <div class="message-error" id="errorPhone"></div>
+                <div class="message-success" id="successPhone"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Fecha de Nacimiento *</label>
+                <input 
+                    type="date"
+                    id="birthdate"
+                    name="birthdate"
+                    required/>
+                <div class="message-error" id="errorBirthdate"></div>
+                <div class="message-success" id="successBirthdate"></div>
+            </div>
+
+            <div class="form-group">
+                <label for ="comments">Comentarios</label>
+                <textarea
+                    id="comments"
+                    name="comments"
+                    rows="4"
+                    placeholder="Cuentanos sobre ti (Maximo 500 caracteres)"
+                    maxlength="500"></textarea>
+
+                <div class="char-counter">
+                    <span id="charCount">0</span> / 500
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="terms">
+                    <input 
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required/>
+                    Acepto los términos y condiciones
+                </label>
+                <div class="message-error" id="errorTerms"></div>
+            </div>    
+            
+            <button
+                type="submit"
+                id="btnSubmit"
+                disabled>
+                Enviar formulario
+            </button>
+                    
+        </form>
+    </div> 
+
+
+
+
+
+    <script>
+
+    </script>
+</body>
+</html>
